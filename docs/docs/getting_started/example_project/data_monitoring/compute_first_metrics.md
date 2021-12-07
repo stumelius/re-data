@@ -9,18 +9,18 @@ Now, let's compute the first metrics. We can specify the tables we want to monit
 ```yaml title="monitored tables"
 vars:
   re_data:monitored:
-    - tables:
-        - name: customers
-          time_filter: joined_at
-        - name: order_items
-          time_filter: added_at
-        - name: orders
-          time_filter: created_at
-          # actively_monitored: false (we can disable computing metrics for specific table)
-        - name: companies
-          time_filter: null # to compute global metrics for this table. (no time window would be used)
+    tables:
+      - name: customers
+        time_filter: joined_at
+      - name: order_items
+        time_filter: added_at
+      - name: orders
+        time_filter: created_at
+        # actively_monitored: false (we can disable computing metrics for specific table)
+      - name: companies
+        time_filter: null # to compute global metrics for this table. (no time window would be used)
 
-      actively_monitored: true # we can set this here to monitor all tables listed, removing the need to specify actively_monitored per table
+    actively_monitored: true # we can set this here to monitor all tables listed, removing the need to specify actively_monitored per table
       
 models:
   re_data:
